@@ -1,0 +1,33 @@
+<!--put everything which has no changes in all pages-->
+{% load static %}
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'books/css.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <body>
+      <ul id="header">
+        <li >Home</li>
+        <li><a href="{% url 'home' %}">Books</a></li>
+        <li>About Us</li>
+      </ul>
+      {% block content %}
+      <!--here we will put the part which will change-->
+      {% endblock %}
+      <footer>
+        <p>Author: Yara<br /></p>
+        <p>Yara@gmail.com</p>
+        <div>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-linkedin"></a>
+
+      </div>
+      </footer>
+    </body>
+  </head>
+</html>

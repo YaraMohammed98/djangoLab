@@ -1,0 +1,27 @@
+{% extends 'books/base.html' %} {% block title %} All books {%endblock%} 
+{%block content %}
+<div id="div1">
+  <h1>list of Books :</h1>
+  <a id="add" class="crud" href="{% url 'create_book'%}">Add Book</a>
+  <table style="width:50%" id="bookstable">
+    <tr>
+      <th id="booth">Books</th>
+    </tr>
+      {% for book in books %}
+      <tr>
+      <td>
+        <a class="links" href="{% url 'book_info' book.id %}">{{book.name}}</a>
+      <div class="buttons">
+        <a id="edit" class="crud" href="{% url 'book_edit' book.id %}">Edit</a>
+        <a id="delete" class="crud"   href="{% url 'book_delete' book.id  %}">Delete</a>
+      </div>
+  
+      </td>
+    </tr>
+      {% endfor %}
+    
+    <table
+  </div>
+ 
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'books/base.html' %} 
+{% load static %}
+{% block title %}  {%endblock%}
+{% block content %}
+<form action={% url 'book_delete' item.id %} method="post">
+    <p id="conftext">Are you sure you want to delete "{{item}}"?</p>
+    {% csrf_token %}
+    <div id="confirmationdiv">
+    <a class="crud" id="cancel" href="{% url 'home' %}">cancel</a>
+    <input id="sub" type="submit" name="confirm">
+</div>
+</form>
+{%endblock%}
